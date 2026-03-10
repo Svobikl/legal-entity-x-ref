@@ -6,18 +6,29 @@ Unlike traditional legal databases, LEX is structured for **Agentic Consumption*
 
 ## Quick Start
 
-Agents can use LEX to fetch the exact context needed for drafting or analyzing legal documents:
+### Installation
+You can install LEX globally directly from GitHub:
 
 ```bash
-# General search for business structures
-lex search "LLC vs GmbH" 
-
-# Fetch the Employment & Workforce template with verified references
-lex get templates/02_employment_workforce.md
-
-# Verify a specific government link
-lex verify canada/employment
+npm install -g https://github.com/Svobikl/legal-entity-x-ref.git
 ```
+
+Or clone and link locally:
+```bash
+git clone https://github.com/Svobikl/legal-entity-x-ref.git
+cd legal-entity-x-ref
+npm install
+npm link
+```
+
+### Basic Commands
+Once installed, use the `lex` command:
+
+- `lex search [pattern]` - Search for legal concepts (e.g., `lex search "non-compete"`)
+- `lex get [path]` - Read a specific template (e.g., `lex get templates/02_employment_workforce.md`)
+- `lex verify` - List official government reference links
+- `lex list-eu` - Quick view of all 27 EU national legal databases
+- `lex help` - Show all commands
 
 ## How It Works
 

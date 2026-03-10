@@ -1,0 +1,34 @@
+{
+  "name": "legal-entity-x-ref",
+  "version": "1.0.0",
+  "description": "A centralized truth engine for legal context across 29 jurisdictions.",
+  "main": "bin/lex.js",
+  "bin": {
+    "lex": "bin/lex.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Svobikl/legal-entity-x-ref.git"
+  },
+  "keywords": [
+    "legal",
+    "templates",
+    "eu",
+    "usa",
+    "canada",
+    "truth-engine"
+  ],
+  "author": "Svobikl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Svobikl/legal-entity-x-ref/issues"
+  },
+  "homepage": "https://github.com/Svobikl/legal-entity-x-ref#readme",
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^14.0.3"
+  }
+}
