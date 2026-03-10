@@ -1,0 +1,4 @@
+# Local draft artifacts
+drafts/
+# PowerShell local history or data if any
+*.log
