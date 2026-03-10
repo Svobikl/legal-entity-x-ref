@@ -93,4 +93,31 @@ program
     }
   });
 
+program
+  .command('draft')
+  .description('Scaffold a new contract draft from a template')
+  .argument('<template>', 'Name of the template file (e.g., 01_business_foundation.md)')
+  .argument('[output]', 'Optional output filename')
+  .action((template, output) => {
+    const templatePath = path.join(TEMPLATES_DIR, template);
+    if (!fs.existsSync(templatePath)) {
+      console.log(chalk.red(`Template ${template} not found.`));
+      return;
+    }
+
+    const draftsDir = path.join(process.cwd(), 'drafts');
+    if (!fs.existsSync(draftsDir)) {
+      fs.mkdirSync(draftsDir);
+    }
+
+    const outputName = output || `draft_${template}`;
+    const outputPath = path.join(draftsDir, outputName);
+    
+    const disclaimer = `# LEX AI Generated Draft\n# This document was generated using LEX (Legal-Entity-X-ref) as a reference.\n# It is a work in progress and should be used with caution.\n# It is not a substitute for professional legal advice.\n\n`;
+    const templateContent = fs.readFileSync(templatePath, 'utf8');
+    
+    fs.writeFileSync(outputPath, disclaimer + templateContent);
+    console.log(chalk.green(`Successfully drafted: ${chalk.bold(path.join('drafts', outputName))}`));
+  });
+
 program.parse(process.argv);

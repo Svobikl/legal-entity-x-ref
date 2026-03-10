@@ -26,6 +26,7 @@ Once installed, use the `lex` command:
 
 - `lex search [pattern]` - Search for legal concepts (e.g., `lex search "non-compete"`)
 - `lex get [path]` - Read a specific template (e.g., `lex get templates/02_employment_workforce.md`)
+- `lex draft <template> [output]` - Scaffold a new contract draft
 - `lex verify` - List official government reference links
 - `lex list-eu` - Quick view of all 27 EU national legal databases
 - `lex help` - Show all commands
